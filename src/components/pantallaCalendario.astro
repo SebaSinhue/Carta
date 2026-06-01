@@ -1,27 +1,22 @@
 <section
   id="calendar-screen"
-  class="fixed inset-0 z-20 translate-x-full overflow-hidden bg-[#f7efe7] bg-cover bg-center px-4 md:px-10 transition-transform duration-700 ease-in-out"
+  class="fixed inset-0 z-20 translate-x-full overflow-x-hidden overflow-y-auto bg-[#f7efe7] bg-cover bg-center px-4 md:px-10 transition-transform duration-700 ease-in-out"
   style="background-image: url('/Carta/img/papelArrugado.jpg');"
 >
-  <!-- CONTENEDOR DE FOTOS/VIDEOS FLOTANTES (Fondo) -->
-  <div id="floating-media-container" class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-    <!-- 
-      INSTRUCCIONES: 
-      Pon aquí las rutas de tus fotos y videos. 
-      Tienen la clase 'opacity-0' para estar ocultos al inicio. 
-      Puedes mezclar formas (rounded-xl, rounded-full) y bordes.
-    -->
-    <img src="/Carta/img/ali1.jpeg" class="floating-media absolute opacity-0 transition-opacity duration-1000 ease-in-out w-40 h-40 md:w-56 md:h-56 object-cover rounded-xl shadow-xl border-[6px] border-white" />
-    <img src="/Carta/img/ali2.jpeg" class="floating-media absolute opacity-0 transition-opacity duration-1000 ease-in-out w-36 h-36 md:w-48 md:h-48 object-cover rounded-3xl shadow-xl border-4 border-white" />
-    <img src="/Carta/img/ali3.jpeg" class="floating-media absolute opacity-0 transition-opacity duration-1000 ease-in-out w-44 h-44 md:w-60 md:h-60 object-cover rounded-full shadow-xl border-4 border-[#8b5e3c]/30" />
+  <!-- CONTENEDOR DE FOTOS/VIDEOS FLOTANTES (Cambiado a fixed para que acompañen el scroll) -->
+  <div id="floating-media-container" class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+    <!-- Tamaños más delicados en móvil (ej. w-28) y grandes en PC (ej. md:w-56) -->
+    <img src="/Carta/img/ali1.jpeg" class="floating-media absolute opacity-0 transition-opacity duration-500 ease-in-out w-28 h-28 md:w-56 md:h-56 object-cover rounded-xl shadow-xl border-[4px] md:border-[6px] border-white" />
+    <img src="/Carta/img/ali2.jpeg" class="floating-media absolute opacity-0 transition-opacity duration-500 ease-in-out w-24 h-24 md:w-48 md:h-48 object-cover rounded-3xl shadow-xl border-[3px] md:border-4 border-white" />
+    <img src="/Carta/img/ali3.jpeg" class="floating-media absolute opacity-0 transition-opacity duration-500 ease-in-out w-32 h-32 md:w-60 md:h-60 object-cover rounded-full shadow-xl border-[3px] md:border-4 border-[#8b5e3c]/30" />
     
-    <!-- Para videos, es MUY importante dejar 'muted loop playsinline' para que el navegador permita reproducirlos automáticamente -->
-    <video src="/Carta/vid/aliVid1.mp4" class="floating-media absolute opacity-0 transition-opacity duration-1000 ease-in-out w-40 h-48 md:w-56 md:h-64 object-cover rounded-lg shadow-xl border-[6px] border-white" muted loop playsinline></video>
-    <video src="/Carta/vid/aliVid2.mp4" class="floating-media absolute opacity-0 transition-opacity duration-1000 ease-in-out w-36 h-36 md:w-52 md:h-52 object-cover rounded-full shadow-xl border-4 border-white" muted loop playsinline></video>
+    <video src="/Carta/vid/aliVid1.mp4" class="floating-media absolute opacity-0 transition-opacity duration-500 ease-in-out w-28 h-36 md:w-56 md:h-64 object-cover rounded-lg shadow-xl border-[4px] md:border-[6px] border-white" muted loop playsinline></video>
+    <video src="/Carta/vid/aliVid2.mp4" class="floating-media absolute opacity-0 transition-opacity duration-500 ease-in-out w-24 h-24 md:w-52 md:h-52 object-cover rounded-full shadow-xl border-[3px] md:border-4 border-white" muted loop playsinline></video>
   </div>
 
-  <div class="flex min-h-screen flex-col items-center justify-center text-center relative z-10 py-6">
-    <!-- Tarjeta principal (Más compacta: py-8, max-w-[750px]) -->
+  <!-- Aumenté el padding vertical (py-12) para que los botones tengan espacio para respirar al final -->
+  <div class="flex min-h-screen flex-col items-center justify-center text-center relative z-10 py-12">
+    <!-- Tarjeta principal -->
     <div class="letter-card relative w-full max-w-[750px] rounded-[2.5rem] border border-[#8b5e3c]/30 bg-[#fff7e8]/95 px-6 py-8 shadow-2xl">
       
       <!-- Encabezado y Título -->
@@ -53,12 +48,12 @@
       <!-- CONTENEDOR DEL CALENDARIO -->
       <div class="calendar-deploy mx-auto w-full max-w-[550px] drop-shadow-xl">
         
-        <!-- EFECTO DE ONDAS (Más compacto: p-6) -->
-        <div class="scalloped-edge px-6 py-8 text-white">
+        <!-- EFECTO DE ONDAS -->
+        <div class="scalloped-edge px-4 md:px-6 py-8 text-white">
           <h3 class="mb-4 font-romantic text-4xl italic drop-shadow-md">Mayo</h3>
           
-          <!-- Cuadrícula del mes (text-lg en lugar de xl, py-2 en lugar de py-4) -->
-          <div class="flex flex-col text-lg font-medium tracking-wide">
+          <!-- Cuadrícula del mes -->
+          <div class="flex flex-col text-base md:text-lg font-medium tracking-wide">
             
             <div class="grid grid-cols-7 border-b border-white/40 pb-2">
               <div class="opacity-0">26</div><div class="opacity-0">27</div><div class="opacity-0">28</div><div class="opacity-0">29</div><div class="opacity-0">30</div>
@@ -74,7 +69,7 @@
               
               <div class="relative flex items-center justify-center">
                 <span class="relative z-10 font-bold text-white drop-shadow-md">15</span>
-                <svg class="heartbeat-icon absolute h-12 w-12 text-[#cc2738] drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
+                <svg class="heartbeat-icon absolute h-10 w-10 md:h-12 md:w-12 text-[#cc2738] drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                 </svg>
               </div>
@@ -97,7 +92,7 @@
         </div>
       </div>
 
-      <!-- Botones (Más pequeños) -->
+      <!-- Botones -->
       <div class="mt-8 flex justify-center gap-6">
         <button id="btn-back-calendar" class="rounded-full border border-[#8f2636] px-8 py-2 font-romantic text-base italic text-[#8f2636] active:scale-95">
           BACK
@@ -124,7 +119,7 @@
     position: absolute;
     top: -12px; left: -12px; right: -12px; bottom: -12px;
     background-image: radial-gradient(circle, #89b2f5 50%, transparent 53%);
-    background-size: 24px 24px; /* Ondas un poco más pequeñas */
+    background-size: 24px 24px;
     background-position: center;
     background-repeat: round; 
     z-index: -1; 
@@ -174,8 +169,9 @@
         (item as HTMLVideoElement).play().catch(() => {});
       }
 
-      const randomX = Math.floor(Math.random() * 70) + 10;
-      const randomY = Math.floor(Math.random() * 70) + 10;
+      // Ajustamos el rango aleatorio para que no se salgan del marco del teléfono
+      const randomX = Math.floor(Math.random() * 60) + 5;
+      const randomY = Math.floor(Math.random() * 70) + 5;
       const randomRotation = Math.floor(Math.random() * 50) - 25;
 
       item.style.left = `${randomX}%`;
@@ -198,7 +194,7 @@
     }
   }
 
-  setInterval(showRandomMedia, 2500);
+  setInterval(showRandomMedia, 1500);
 
   const calendarScreen = document.getElementById("calendar-screen");
   const musicScreen = document.getElementById("music-screen");
