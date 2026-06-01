@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://SebaSinhue.github.io",
+  site: "https://sebasinhue.github.io",
   base: "/Carta",
 
   vite: {
