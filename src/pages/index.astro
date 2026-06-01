@@ -1,11 +1,18 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import PantallaInicio from '../components/pantallaInicio.astro';
+import PantallaNo from '../components/pantallaNo.astro';
+import PantallaFlores from '../components/pantallasFlores.astro';
+import PantallaCarta from '../components/pantallaCarta.astro';
+import PantallaCalendario from '../components/pantallaCalendario.astro';
+import PantallaReproductor from '../components/pantallaReproductor.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Carta para ti">
+	<PantallaInicio />
+	<PantallaNo />
+	<PantallaFlores />
+	<PantallaCarta />
+	<PantallaCalendario />
+	<PantallaReproductor />
 </Layout>

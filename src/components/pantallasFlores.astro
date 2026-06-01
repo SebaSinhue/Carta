@@ -1,0 +1,67 @@
+<section
+  id="flowers-screen"
+  class="fixed inset-0 z-10 translate-x-full bg-[#f7efe7] bg-cover bg-center flex items-center justify-center px-6 transition-transform duration-700 ease-in-out"
+  style="background-image: url('/img/papelArrugado.jpg');"
+>
+  <div class="flex min-h-screen w-full flex-col items-center justify-start pt-30 text-center">
+    <h2 class="mb-2 font-romantic text-5xl italic text-[#a51f32]">
+      Unas flores para ti
+    </h2>
+
+    <p class="mb-3 text-[11px] font-semibold tracking-[0.25em] text-[#a51f32]/80">
+      TOMALAS PARA QUE CONTINUES
+    </p>
+
+    <button
+      id="btn-flowers"
+      class="mt-15 transition active:scale-95"
+    >
+      <img
+        src="/img/tulipan.png"
+        alt="Tulipanes para ti"
+        class="flower-main w-[470px] max-w-[96vw] object-contain opacity-0"
+      />
+    </button>
+  </div>
+</section>
+
+<style>
+  .flower-main {
+    animation: flowerAppear 0.9s ease forwards;
+    animation-delay: 0.4s;
+  }
+
+  @keyframes flowerAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.85);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>
+
+<script>
+  const flowersScreen = document.getElementById("flowers-screen");
+  const letterScreen = document.getElementById("letter-screen");
+  const btnFlowers = document.getElementById("btn-flowers");
+  const btnBackFlowers = document.getElementById("btn-back-flowers");
+
+  btnFlowers?.addEventListener("click", () => {
+    letterScreen?.classList.remove("translate-x-full");
+    flowersScreen?.classList.add("-translate-x-full");
+
+    setTimeout(() => {
+      letterScreen?.classList.add("open");
+    }, 750);
+  });
+
+  btnBackFlowers?.addEventListener("click", () => {
+    letterScreen?.classList.add("translate-x-full");
+    letterScreen?.classList.remove("open");
+    flowersScreen?.classList.remove("-translate-x-full");
+  });
+</script>
