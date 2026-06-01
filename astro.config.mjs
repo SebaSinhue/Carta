@@ -5,10 +5,10 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://SebaSinhue.github.io",
+  base: "/Carta",
+
   vite: {
     plugins: [tailwindcss()]
   }
-
-  site: "https://SebaSinhue.github.io",
-  base: "/"
 });
